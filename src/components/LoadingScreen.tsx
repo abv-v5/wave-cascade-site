@@ -22,13 +22,16 @@ const LoadingScreen = () => {
         
         {/* Progress bar */}
         <div className="w-64 h-2 bg-white/20 rounded-full mx-auto mt-6 overflow-hidden">
-          <div className="h-full bg-white rounded-full animate-pulse" style={{
-            animation: 'loadingProgress 3s ease-in-out forwards'
-          }}></div>
+          <div 
+            className="h-full bg-white rounded-full"
+            style={{
+              animation: 'loadingProgress 3s ease-in-out forwards'
+            }}
+          ></div>
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         @keyframes loadingProgress {
           0% { width: 0%; }
           100% { width: 100%; }

@@ -7,6 +7,8 @@ import ServiceCards from '../components/ServiceCards';
 import ContactSection from '../components/ContactSection';
 import LoadingScreen from '../components/LoadingScreen';
 import Navigation from '../components/Navigation';
+import ScrollButtons from '../components/ScrollButtons';
+import { ThemeProvider } from '../components/ThemeProvider';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,14 +27,17 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <Navigation />
-      <Hero />
-      <ServiceCarousel />
-      <StatsSection />
-      <ServiceCards />
-      <ContactSection />
-    </div>
+    <ThemeProvider defaultTheme="light" storageKey="servicepro-theme">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900 transition-colors duration-300">
+        <Navigation />
+        <Hero />
+        <ServiceCarousel />
+        <StatsSection />
+        <ServiceCards />
+        <ContactSection />
+        <ScrollButtons />
+      </div>
+    </ThemeProvider>
   );
 };
 
